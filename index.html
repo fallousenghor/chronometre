@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chronometer</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .chronometre {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f06, #ffba00);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .interne {
+        width: 85%;
+        height: 85%;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        font-weight: 600;
+        color: #333;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .interne span {
+        margin: 0 10px;
+      }
+
+      .btn {
+        position: absolute;
+        top: 70%;
+        width: 60px;
+        height: 60px;
+        background-color: #4caf50;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 25px;
+        color: white;
+      }
+
+      .start {
+        left: 10%;
+      }
+
+      .stop {
+        left: 40%;
+        background-color: #f44336;
+      }
+
+      .reset {
+        right: 10%;
+        background-color: #ffeb3b;
+      }
+
+      .btn:hover {
+        background-color: #555;
+      }
+
+      .btn:active {
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="chronometre">
+        <div class="interne">
+          <span>0h:</span>
+          <span>0min:</span>
+          <span>0s:</span>
+          <span style="font-size: 20px">0ms</span>
+        </div>
+
+        <div class="btn start" onClick="commence()">
+          <i class="fas fa-play"></i>
+        </div>
+
+        <div class="btn stop" onclick="arrete()">
+          <i class="fas fa-stop"></i>
+        </div>
+
+        <div class="btn reset" onclick="reset()">
+          <i class="fas fa-redo"></i>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
